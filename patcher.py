@@ -93,11 +93,15 @@ def check(source):
 try:
     args=args.pop(1)
 except:
-    print('This command works only with arguments.\nUser the --help argument for help.')
+    print('This command works only with arguments.\nUse the --help argument for help.')
     exit()
 
 args=args.lower()
 
+if args=='--help':
+    print('Avaible commands:\npatch - Patches your whole system\nunpatch - Reverts patching')
+    exit()
+    
 if args=='patch':
         global randomizer
 
@@ -116,3 +120,7 @@ if args=='patch':
             sleep(1.5)
             main()
         else: exit()
+
+if args=='unpatch':
+    sleep(2.5)
+    unpatch()
